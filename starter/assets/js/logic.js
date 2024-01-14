@@ -33,11 +33,13 @@ document.addEventListener("DOMContentLoaded", function() {
         timeElement.textContent = timeLeft;
   
         if (timeLeft <= 0) {
+            // end the quiz
           endQuiz();
         }
       }, 1000);
     }
   
+    // Function to display questions
     function loadQuestion() {
       var currentQuestion = questions[currentQuestionIndex];
   
@@ -54,25 +56,29 @@ document.addEventListener("DOMContentLoaded", function() {
         choicesElement.appendChild(choiceButton);
       });
     }
-  
+   // Function to check the answer
     function checkAnswer(selectedAnswer, correctAnswer) {
       if (selectedAnswer === correctAnswer) {
+        // Correct answer
         feedbackElement.textContent = "Correct!";
         score++;
       } else {
+            // Incorrect answer, subtract time
         feedbackElement.textContent = "Incorrect!";
         timeLeft -= 10;
       }
-  
+  // Move to the next question
       currentQuestionIndex++;
   
       if (currentQuestionIndex < questions.length) {
         loadQuestion();
       } else {
+        // Function to end the quiz
         endQuiz();
       }
     }
-  // Event listener for the clear button
+    // End quiz function when condition is met
+  
     function endQuiz() {
       clearInterval(timerInterval);
   
@@ -82,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("final-score").textContent = score;
     }
   
-    
+    // Event listener for submit button
 
     submitButton.addEventListener("click", function() {
       var initials = initialsInput.value.trim();
