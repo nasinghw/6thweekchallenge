@@ -47,5 +47,7 @@ var questions = [
   ];
   
   // Export the questions array
-  module.exports = questions;
+  if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
+    module.exports = questions;
+  }
   
