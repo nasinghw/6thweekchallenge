@@ -1,4 +1,6 @@
 // logic.js
+    // Logic for handling questions and high scores
+    // Example: Display questions and high scores
 
 document.addEventListener("DOMContentLoaded", function() {
     var startButton = document.getElementById("start");
@@ -14,13 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
     var timeLeft = 30;
     var timerInterval;
   
+    // Listen to click button to start the quiz
     startButton.addEventListener("click", startQuiz);
   
+    // Import the questions array
     function startQuiz() {
+        // Hide the start screen
       startButton.parentElement.classList.add("hide");
+      // Show the questions screen
       document.getElementById("questions").classList.remove("hide");
       loadQuestion();
   
+        // Start the timer
       timerInterval = setInterval(function() {
         timeLeft--;
         timeElement.textContent = timeLeft;
@@ -75,9 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("final-score").textContent = score;
     }
   
-    // Logic for handling high scores
-
-    // Example: Display high scores
+    
 
     submitButton.addEventListener("click", function() {
       var initials = initialsInput.value.trim();
