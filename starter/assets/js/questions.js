@@ -44,6 +44,23 @@ var questions = [
         correctAnswer: "5NineInNumber"
       },
 
+      {
+        question: "What keyword is used to check whether a given property is valid or not?" ,
+        choices: ["in", "is in", "exits", "lies"],
+        correctAnswer: "in"
+      },
+      {
+        question: "When an operator’s value is NULL, the typeof returned by the unary operator is:" ,
+        choices: ["Boolean", "Undefined", "Object", "Integer"],
+        correctAnswer: "Object"
+      },
+      {
+        question: "Which function is used to serialize an object into a JSON string in Javascript?" ,
+        choices: ["stringify()", "parse()", "convert()", "None of the above"],
+        correctAnswer: "stingyfy()"
+      },
+
+
   ];
   
   // Export the questions array
