@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     var currentQuestionIndex = 0;
     var score = 0;
-    var timeLeft = 60;
+    var timeLeft = 30;
     var timerInterval;
   
     startButton.addEventListener("click", startQuiz);
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         endQuiz();
       }
     }
-  
+  // Event listener for the clear button
     function endQuiz() {
       clearInterval(timerInterval);
   
@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("final-score").textContent = score;
     }
   
+    // Logic for handling high scores
+
+    // Example: Display high scores
+
     submitButton.addEventListener("click", function() {
       var initials = initialsInput.value.trim();
   
