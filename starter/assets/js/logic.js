@@ -53,6 +53,17 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 1000);
     }
   
+    //Function to clear answer status
+
+    function cleartext(currenttime){
+            // Create interval for every 3sec
+            cleartxt = setInterval(function(){
+                if (currenttime-timeLeft >= 1) {
+                    feedbackElement.textContent = "";
+                    clearInterval(cleartxt);         
+                }
+            })
+           }
     // Function to display questions
     function loadQuestion() {
       var currentQuestion = questions[currentQuestionIndex];
@@ -77,11 +88,13 @@ document.addEventListener("DOMContentLoaded", function() {
         answercorrectsound.play();
         feedbackElement.textContent = "Correct!";
         score++;
+        cleartext(timeLeft);
       } else {
             // Incorrect answer, subtract time
             answerincorrectsound.play();
         feedbackElement.textContent = "Incorrect!";
         timeLeft -= 10;
+        cleartext(timeLeft);
       }
   // Move to the next question
       currentQuestionIndex++;
