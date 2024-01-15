@@ -15,20 +15,21 @@ document.addEventListener("DOMContentLoaded", function() {
     var score = 0;
     var timeLeft = 30;
     var timerInterval;
+    
   
     // Listen to click button to start the quiz
     startButton.addEventListener("click", startQuiz);
 
-    //Play correct and incorrect sound
-    // function playSound(correct) {
-    //     const audio = new Audio(`./assests/sfx${correct.wav}`);
-    //     audio.play();
-    //   }
+    //Play correct and incorrect sound function
+    function playSound(correct) {
+        const audio = new Audio(`./assets/sfx${correct.wav}`);
+        audio.play();
+      }
 
-    //   function playSound(incorrect) {
-    //     const audio = new Audio(`./assests/sfx${incorrect.wav}`);
-    //     audio.play();
-    //   }
+      function playSound(incorrect) {
+        const audio = new Audio(`./assets/sfx${incorrect.wav}`);
+        audio.play();
+      }
   
     // Import the questions array
     function startQuiz() {
@@ -71,10 +72,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function checkAnswer(selectedAnswer, correctAnswer) {
       if (selectedAnswer === correctAnswer) {
         // Correct answer
+        // playSound(correct);
         feedbackElement.textContent = "Correct!";
         score++;
       } else {
             // Incorrect answer, subtract time
+            // playSound(incorrect);
         feedbackElement.textContent = "Incorrect!";
         timeLeft -= 10;
       }
