@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //Play correct and incorrect sound
     function playSound1(correct) {
-        const audio = new Audio(`./assests/sfx${correct.wav}`);
-        audio.play();
+        const audio1 = new Audio(`./assests/sfx${correct.wav}`);
+        audio1.play();
       }
 
       function playSound2(incorrect) {
-        const audio = new Audio(`./assests/sfx${incorrect.wav}`);
-        audio.play();
+        const audio2 = new Audio(`./assests/sfx${incorrect.wav}`);
+        audio2.play();
       }
   
     // Import the questions array
