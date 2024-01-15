@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Listen to click button to start the quiz
     startButton.addEventListener("click", startQuiz);
 
-    //Play correct and incorrect sound function
+    //Play correct and incorrect sound
     function playSound(correct) {
         const audio = new Audio(`./assets/sfx${correct.wav}`);
         audio.play();
